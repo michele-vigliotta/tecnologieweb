@@ -61,7 +61,7 @@
                               </div>
                             </div>
                               <label for="nrisposta">Risposta:</label><br>
-                              <textarea id="nrisposta" name="nuova_risposta" rows="4" cols="50" required value="{{ $xfaq[0]->risposta }}"> </textarea>
+                              <textarea id="nrisposta" name="nuova_risposta" rows="4" cols="50" required >{{ $xfaq[0]->risposta }} </textarea>
                             </div>
                         </div>
                       </div>
