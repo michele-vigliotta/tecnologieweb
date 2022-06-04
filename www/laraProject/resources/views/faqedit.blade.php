@@ -16,12 +16,6 @@
     <!-- end header section -->
   </div>
 
-    
-    
-    
-    
-    
-    
     <section class="find_section layout_padding">
     <div class="container">
       <div class="row">
@@ -72,8 +66,8 @@
                         </div>
                       </div>
                     </div>
-                    
-                    
+
+
                     <div class="btn-box">
                       <button type="submit">
                         <span>
@@ -86,7 +80,7 @@
                           ELIMINA
                         </span>
                       </button>
-                        
+
                     </div>
                   </form>
                 </div>
@@ -97,44 +91,8 @@
       </div>
     </div>
   </section>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
      @include('contentSections/general/infoSection')
 
 

@@ -10,17 +10,17 @@ use App\FAQ;
 use Illuminate\Http\Request;
 
 class FAQController extends Controller{
-    
+
  public function faqedit(Request $request){
      $query="select * from faq where id_FAQ='".$request->id."'";
-     
+
      $xfaq=DB::select($query);
-     
-     
-     return view('faqedit', ['FAQ'=>$xfaq]);
+
+
+     return view('faqedit', ['xfaq'=>$xfaq]);
     }
 
-    
+
     /*
   public function dettagli(Request $request){
       $query="select * from annuncio where id_annuncio='".$request->id."'";
@@ -30,5 +30,5 @@ class FAQController extends Controller{
       return view('dettagli', ['annuncio'=>$annuncio, 'photo'=>$photo]);
     }
      * */
-    
+
 }

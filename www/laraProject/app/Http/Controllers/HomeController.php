@@ -64,8 +64,9 @@
       public function chat(){
           return view('chat');
       }
-      
-     
+      public function homeadmin(){
+          return view('homeadmin');
+      }
 
   }
 
