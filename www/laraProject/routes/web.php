@@ -66,5 +66,6 @@ Route::post('update', [UserController::class, 'update']);
 
 
 Route::get('/faqedit/{id}', 'FAQController@faqedit')->name('faqedit');
+Route::get('/t1', function(){return View::make('pages.testchat');});
 
 Route::post('faqupdate', [FAQController::class, 'faqupdate']);
