@@ -1,133 +1,70 @@
 <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="{{ route('index') }}">
-            <span>
-              Affitta casa
-            </span>
-          </a>
+    <a class="navbar-brand" href="{{ route('index') }}">
+        <span>Affitta casa</span>
+    </a>
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class=""> </span>
-          </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class=""> </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  ">
+            <!-- Route Index -->
+            @include('includes/navItem/onlyRoute', ['route'=>'index'], ['value'=>'Home'])
+            <!-- Route Catalogo -->
+            @include('includes/navItem/onlyRoute',  ['route'=>'catalogo'], ['value'=>'Catalogo'])
+            <!-- Route About -->
+            @include('includes/navItem/onlyRoute',  ['route'=>'about'], ['value'=>'About'])
+            <!-- Route Why -->
+            @include('includes/navItem/onlyRoute',  ['route'=>'why'], ['value'=>'Why Us'])
+            <!-- Route Faq -->
+            @include('includes/navItem/onlyRoute',  ['route'=>'faq'], ['value'=>'FAQ'])
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav  ">
-                
-                @if( Request::is('index'))
-               <li class="nav-item active">
-                @else
-                <li class="nav-item">
-                @endif
-                    <a class="nav-link" href="{{ route('index') }}"> Home </a>
-                </li>
-                
-                @if( Request::is('catalogo'))
-                <li class="nav-item active">
-                @else
-                <li class="nav-item">
-                @endif
-                    <a class="nav-link" href="{{ route('catalogo') }}"> Catalogo</a>
-                </li>
-                
-                @if( Request::is('about'))
-                <li class="nav-item active">
-                @else
-                <li class="nav-item">
-                @endif
-                    <a class="nav-link" href="{{ route('about') }}"> About</a>
-                </li>
-                
-                
-                @if( Request::is('why'))
-                <li class="nav-item active">
-                @else
-                <li class="nav-item">
-                @endif
-                    <a class="nav-link" href="{{ route('why') }}"> Why Us</a>
-                </li>
-                
-                @if( Request::is('faq'))
-                <li class="nav-item active">
-                @else
-                <li class="nav-item">
-                @endif
-                    <a class="nav-link" href="{{ route('faq') }}">FAQ</a>
-                </li>
-                
-                
-                
+
             @if(isset(Auth::user()->nome))
-                    @if('Locatore'==(Auth::user()->tipo)||'locatario'==(Auth::user()->tipo))
-                @if( Request::is('chat'))
-                <li class="nav-item active">
-                @else
-                <li class="nav-item">
+                @if('locatario'==(Auth::user()->tipo)||'locatore'==(Auth::user()->tipo))
+                    <!-- Route Chat -->
+                    @include('includes/navItem/onlyRoute',  ['route'=>'chat'], ['value'=>'Chat'])
                 @endif
-                    <a class="nav-link" href="">Chat</a>
-                </li>
-                    @endif
-                
                 @if('admin'==(Auth::user()->tipo))
-                @if( Request::is('stats'))    
-                <li class="nav-item active">
-                @else
-                <li class="nav-item">
+                <!-- Route Statistiche -->
+                    @include('includes/navItem/onlyRoute',  ['route'=>'stats'], ['value'=>'Statistiche'])
                 @endif
-                  <a class="nav-link" href="{{route('stats')}}">Statistiche</a>
-              </li>
-                    @endif
-                    
-                @if( Request::is('profile'))
-                <li class="nav-item active">
-                @else
-                <li class="nav-item">
-                @endif
-                    <a class="nav-link" href="{{ route('profile')}}">Profilo</a>
-                </li>
-                     
-                @if('Locatore'==(Auth::user()->tipo))
-                    @if( Request::is('annunci'))    
-                        <li class="nav-item active">
-                    @else
-                <li class="nav-item">
-                    @endif
-                  <a class="nav-link" href="{{route('annunci')}}">Annunci</a>
-              </li>
-                    @endif
-            @endif
-            </ul>
-              
-            @if(isset(Auth::user()->nome))
-              <div class="quote_btn-container">
-                  @if((Auth::user()->tipo)!=='admin')
-                    <a href="{{ route('homeutente') }}" class="quote_btn">
-                    {{ Auth::user()->nome }}
-                    </a>
-                  @else
-                    <a href="{{ route('homeadmin') }}" class="quote_btn">
-                    {{ Auth::user()->tipo }}
-                    </a>
-                  @endif
-              </div>
-              &nbsp
-              <div class="quote_btn-container">
-                <a href="{{ route('logout') }}" class="quote_btn">
-                  LOGOUT
-                </a>
-              </div>
-            @else
-              <div class="quote_btn-container">
-                <a href="{{ route('login') }}" class="quote_btn">
-                  LOG IN
-                </a>
-              </div>
-              &nbsp;
-              <div class="quote_btn-container">
-                <a href="{{ route('signup') }}" class="quote_btn">
-                  SIGN UP
-                </a>
-              </div>
-            @endif
+                <!-- Route Profilo -->
+                @include('includes/navItem/onlyRoute',  ['route'=>'profile'], ['value'=>'Profilo'])
 
-          </div>
-        </nav>
+                @if('locatore'==(Auth::user()->tipo))
+                    <!-- Route Annunci -->
+                    @include('includes/navItem/onlyRoute',  ['route'=>'annunci'], ['value'=>'Annunci'])
+                @endif
+            @endif
+        </ul>
+
+        <!-- Login/Register Route -->
+        @if(isset(Auth::user()->nome))
+            @if('admin'!==(Auth::user()->tipo))
+                @include('includes/navItem/rightSection',  ['route'=>'homeutente'],['value'=>Auth::user()->nome])
+            @else
+                @include('includes/navItem/rightSection',  ['route'=>'homeadmin'],['value'=>Auth::user()->nome])
+            @endif
+            &nbsp
+            @include('includes/navItem/rightSection',  ['route'=>'logout'],['value'=>'LOGOUT'])
+        @else
+            @include('includes/navItem/rightSection',  ['route'=>'login'],['value'=>'LOG IN'])
+            &nbsp;@include('includes/navItem/rightSection',  ['route'=>'signup'],['value'=>'SIGN UP'])
+        @endif
+    </div>
+</nav>
+
+/*
+Zona Login/Register Route
+Da inserire se si vuole la visualizzazione del profilo
+@include('includes/navItem/rightSection',  ['route'=>'profile'],['value'=>Auth::user()->nome])
+Da inserire se si vuole andare sulla home
+@if('admin'!==(Auth::user()->tipo))
+    @include('includes/navItem/rightSection',  ['route'=>'homeutente'],['value'=>Auth::user()->nome])
+@else
+    @include('includes/navItem/rightSection',  ['route'=>'homeadmin'],['value'=>Auth::user()->nome])
+@endif
+*/
+
 
