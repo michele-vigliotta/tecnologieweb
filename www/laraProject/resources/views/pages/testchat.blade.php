@@ -1,7 +1,4 @@
 @extends('layouts.default')
-@section('optionalStyle')
-
-@stop
 
 @section('content')
 <div class="container-fluid">
@@ -22,15 +19,18 @@
 
                 <!--Start submit section-->
                 <div class="row justify-content">
-                    <div class="col-8">
-                        insert message
-                    </div>
-                    <div class="col-4">
-                        submit
-                    </div>
-                </div>
+                        <form>
+                            <textarea id="message" name="message" rows="4" cols="50"></textarea>
+                            <input type="submit" value="Submit">
+                        </form>
                 <!--End submit section-->
-            </div>
+                    <div class="btn-box">
+                        <button type="submit">
+                        <span>
+                          REGISTRATI
+                        </span>
+                        </button>
+                    </div>
     </div>
 </div>
 @include('contentSections/general/infoSection')
