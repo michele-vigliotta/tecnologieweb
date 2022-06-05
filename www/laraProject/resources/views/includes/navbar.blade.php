@@ -55,9 +55,10 @@
     </div>
 </nav>
 
-/*
+{{--
 Zona Login/Register Route
 Da inserire se si vuole la visualizzazione del profilo
+
 @include('includes/navItem/rightSection',  ['route'=>'profile'],['value'=>Auth::user()->nome])
 Da inserire se si vuole andare sulla home
 @if('admin'!==(Auth::user()->tipo))
@@ -65,6 +66,11 @@ Da inserire se si vuole andare sulla home
 @else
     @include('includes/navItem/rightSection',  ['route'=>'homeadmin'],['value'=>Auth::user()->nome])
 @endif
-*/
+
+
+--}}
+
+
+
 
 
