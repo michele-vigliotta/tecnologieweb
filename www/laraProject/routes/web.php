@@ -43,8 +43,6 @@ Route::post('user', [UserController::class, 'checkLogin']);
 
 Route::get('/logout', 'LogoutController@logout')->name('logout');
 
-
-
 Route::post('addAnnuncio', [AnnuncioController::class, 'addAnnuncio']);
 
 Route::get('/aggAnnuncio', 'AnnuncioController@aggiungiAnnuncio')->name('aggAnnuncio');
@@ -53,8 +51,6 @@ Route::get('/dettagli/{id}', 'AnnuncioController@dettagli')->name('dettagli');
 
 Route::post('filterCatalog', [AnnuncioController::class, 'filterCatalog'])->name('filterCatalog');
 
-Route::get('/test2', function(){return View::make('pages.home');});
-
 Route::get('/annunci', 'HomeController@annunci')->name('annunci');
 Route::get('/stats', 'HomeController@stats')->name('stats');
 Route::get('/chat', 'HomeController@chat')->name('chat');
@@ -62,10 +58,11 @@ Route::get('/chat', 'HomeController@chat')->name('chat');
 Route::get('/profileedit', [UserController::class, 'profileedit'])->name('profileedit')->middleware('auth');
 
 Route::post('update', [UserController::class, 'update']);
-
-
-
 Route::get('/faqedit/{id}', 'FAQController@faqedit')->name('faqedit');
+
+Route::get('/test2', function(){return View::make('pages.home');});
+
 Route::get('/t1', function(){return View::make('pages.testchat');});
 
 Route::post('faqupdate', [FAQController::class, 'faqupdate']);
+Route::get('/test', function(){return View::make('pages.test');});
