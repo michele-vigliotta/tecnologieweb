@@ -66,11 +66,4 @@ Da inserire se si vuole andare sulla home
 @else
     @include('includes/navItem/rightSection',  ['route'=>'homeadmin'],['value'=>Auth::user()->nome])
 @endif
-
-
 --}}
-
-
-
-
-
