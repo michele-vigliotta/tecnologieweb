@@ -1,5 +1,5 @@
 @extends('layouts.default')
 @section('content')
-    @include('navItem/catalogo')
+    @include('pages/catalogueEx')
 @stop
 
