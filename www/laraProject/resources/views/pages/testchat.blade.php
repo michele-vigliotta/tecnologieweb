@@ -8,9 +8,13 @@
                 <h1>Mittenti</h1>
                 <hr class="line">
                 <br>
-                message w/h centered
+                @include('contentSections/chat/chatList')
+                @include('contentSections/chat/chatList')
+                @include('contentSections/chat/chatList')
+                @include('contentSections/chat/chatList')
+                @include('contentSections/chat/chatList')
                 <br>
-                chatlist
+
             </div>
             <div class="col-8">
                 <h1> Chat name</h1>
