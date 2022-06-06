@@ -8,23 +8,31 @@
                 <h1>Mittenti</h1>
                 <hr class="line">
                 <br>
-                @include('contentSections/chat/chatList')
-                @include('contentSections/chat/chatList')
-                @include('contentSections/chat/chatList')
-                @include('contentSections/chat/chatList')
-                @include('contentSections/chat/chatList')
+                <div class="list1" style="overflow-y: scroll; height: 450px; overflow-x:hidden;">
+                    @include('contentSections/chat/chatList')
+                    @include('contentSections/chat/chatList')
+                    @include('contentSections/chat/chatList')
+                    @include('contentSections/chat/chatList')
+                    @include('contentSections/chat/chatList')
+                    @include('contentSections/chat/chatList')
+                    @include('contentSections/chat/chatList')
+                    @include('contentSections/chat/chatList')
+
+                </div>
+
                 <br>
 
             </div>
-            <div class="col-8">
+            <div class="col-6">
                 <h1> Chat name</h1>
                 <hr class="line">
                 <br>
-                chat search
+                <div class="chat_search" style="overflow-y: scroll; height: 450px; overflow-x:hidden; width: 900px;"></div>
+
                 <!--Start submit section-->
 
-                <div class="find_form quote_btn-container">
-                    <textarea id="message" name="message" rows="4" cols="50"></textarea>
+                <div class="find_form quote_btn-container justify-content-center" >
+                    <textarea id="message" name="message" rows="4" cols="50" style="margin-right:15px"></textarea>
                     <div class="contatta">
                         <div class="detail-box">
                             <input type="submit" value="Submit" class="quote_btn justify-content-center contatta">
