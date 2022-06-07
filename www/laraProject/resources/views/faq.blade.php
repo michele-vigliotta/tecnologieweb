@@ -31,11 +31,12 @@
                     @if('admin'==(Auth::user()->tipo))
                     <center>
                     <a href="{{route('faqedit',['id'=>$xfaq->id_FAQ])}}" style="font-size:16px;">Modifica FAQ</a>
-                    
                     </center>
                     @endif
                 @endif
+
               </div>
+
             @endforeach
           @else
             <div class="col-sm-6 col-md-4">
@@ -44,6 +45,15 @@
               </div>
             </div>
           @endif
+          <div class="col align-items-center">
+              <center>
+                  <a href="{{route('faqadd')}}" style="font-size:16px;">Aggiungi FAQ</a>
+              </center>
+
+          </div>
+
+
+
       </div>
     </div>
   </section>

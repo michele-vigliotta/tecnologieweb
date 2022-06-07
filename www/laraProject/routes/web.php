@@ -60,6 +60,8 @@ Route::get('/profileedit', [UserController::class, 'profileedit'])->name('profil
 Route::post('update', [UserController::class, 'update']);
 Route::get('/faqedit/{id}', 'FAQController@faqedit')->name('faqedit');
 
+Route::get('/faqadd', 'FAQController@faqadd')->name('faqadd');
+Route::post('faqCreate', [FAQController::class, 'faqadder']);
 Route::get('/test2', function(){return View::make('pages.home');});
 
 Route::get('/t1', function(){return View::make('pages.testchat');});

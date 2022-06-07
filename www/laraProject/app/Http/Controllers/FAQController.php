@@ -11,14 +11,24 @@ use Illuminate\Http\Request;
 
 class FAQController extends Controller{
 
- public function faqedit(Request $request){
-     $query="select * from faq where id_FAQ='".$request->id."'";
+    public function faqedit(Request $request){
+        $query="select * from faq where id_FAQ='".$request->id."'";
 
-     $xfaq=DB::select($query);
+        $xfaq=DB::select($query);
 
 
-     return view('faqedit', ['xfaq'=>$xfaq]);
+        return view('faqedit', ['xfaq'=>$xfaq]);
     }
+
+    public function faqadder(Request $request, $domanda, $risposta){
+        $execute =DB::insert('INSERT INTO faq (id_FAQ, domanda, risposta, created_at, updated_at) VALUES (NULL, ?, ?, NULL, NULL)',[$domanda,$risposta]);
+        return $execute;
+    }
+    public function faqadd(){
+        return view('faqadd');
+    }
+
+
 
 
     /*
