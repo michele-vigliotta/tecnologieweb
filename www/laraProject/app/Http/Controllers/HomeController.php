@@ -31,7 +31,7 @@
 
     public function faq(){
       $faq=DB::select('select * from faq');
-      return view('faq', ['faq'=>$faq]);
+      return view('pages.faq.faq', ['faq'=>$faq]);
     }
 
 	  public function login(){

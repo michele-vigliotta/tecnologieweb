@@ -16,7 +16,7 @@ class FAQController extends Controller{
 
     //ritorna vista per inserire una nuova faq
     public function faqadd() {
-        return view('faqadd');
+        return view('pages.faq.faqadd');
     }
 
     //salva nel db la nuova faq
@@ -49,7 +49,7 @@ class FAQController extends Controller{
         $xfaq=DB::select($query);
 
 
-        return view('faqedit', ['xfaq'=>$xfaq]);
+        return view('pages.faq.faqedit', ['xfaq'=>$xfaq]);
     }
 
 
