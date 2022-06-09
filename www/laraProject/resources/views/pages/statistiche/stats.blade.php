@@ -12,7 +12,6 @@
                         <div class="tab-content text-center">
                             <div class="tab-pane active">
                                 <div class="Rent_form find_form">
-                                    {{--@if(isset(Auth::user()->username))--}}
                                     <div>
                                         <div class="content">
                                             <div class="individual__section">
@@ -96,28 +95,8 @@
                                                                     effettuate: {{$dlon[0] -> countPren}} </p>
                                                             </div>
                                                         </div>
-
-                                                        {{-- @foreach ($messaggimittente as $msgmit)
-                                                             @foreach ($messaggidestinatario as $msgdes)
-
-                                                                 <p style="text-align: left;">
-                                                                     test <br>
-                                                                     timsestamp </p>
-
-                                                                 <p style="text-align: right;">
-
-                                                                     {{$msgdes->testo}} <br>
-                                                                     {{$msgdes->timestamp}} </p>
-
-
-
-                                                             @endforeach
-                                                         @endforeach--}}
                                                     </div>
                                                 </center>
-                                                {{-- @else
-                                                     <script>window.location = "/index";</script>
-                                                 @endif--}}
                                             </div>
                                         </div>
                                     </div>

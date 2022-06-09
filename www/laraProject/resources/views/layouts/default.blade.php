@@ -14,10 +14,14 @@
     </header>
 </div>
 
-@yield('carousel')
+
+
+@yield('content1')
 
 <div id="main">
-    @yield('content')
+    @yield('content2')
+
+
     @include('contentSections.general.infoSection')
     <footer class="footer_section">
         @include('includes.footer')

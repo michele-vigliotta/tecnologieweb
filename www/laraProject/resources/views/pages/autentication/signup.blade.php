@@ -1,9 +1,9 @@
 @extends('layouts.default')
-@section('carousel')
+@section('content1')
 @stop
 
 
-@section('content')
+@section('content2')
     @include('contentSections/access/register')
     @include('contentSections/general/infoSection')
 @stop

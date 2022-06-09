@@ -42,7 +42,7 @@ class MessaggioController extends Controller{
 
 
     public function nuovomessaggio() {
-        return view('nuovomessaggio');
+        return view('pages.chat.nuovomessaggio');
     }
 
     public function aprichat(Request $request) {
@@ -55,7 +55,7 @@ class MessaggioController extends Controller{
                  or (id_mittente='".$request->id."' and id_destinatario='".Auth::user()->id."') order by id_messaggio";
 
         $messaggi=DB::select($query1);
-        return view('messaggi', ['messaggi'=>$messaggi, 'username'=>$request->username]);
+        return view('pages.chat.messaggi', ['messaggi'=>$messaggi, 'username'=>$request->username]);
 
     }
 

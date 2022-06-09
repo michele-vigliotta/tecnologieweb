@@ -1,8 +1,8 @@
 @extends('layouts.default')
 
-@section('carousel')
+@section('content1')
 @stop
 
-@section('content')
+@section('content2')
     @include('contentSections.general.whyUs')
 @stop
