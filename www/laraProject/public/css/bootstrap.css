@@ -1047,6 +1047,12 @@ pre code {
     flex: 0 0 50%;
     max-width: 50%;
   }
+
+  .col-md-6sd{
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 100%;
+  }
   .col-md-6_2 {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
@@ -1082,6 +1088,12 @@ pre code {
     flex: 0 0 100%;
     max-width: 100%;
   }
+
+  .col-md-13{
+    -ms-flex: 0 0 120%;
+    flex: 0 0 130%;
+  }
+
   .order-md-first {
     -ms-flex-order: -1;
     order: -1;
@@ -2021,8 +2033,8 @@ textarea.form-control {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -5px;
-  margin-left: -5px;
+  margin-right: -10px;
+  margin-left: 10px;
 }
 
 .form-row > .col,
@@ -3272,6 +3284,7 @@ input[type="button"].btn-block {
 
 .dropdown-menu.show {
   display: block;
+  background-color: #f7f8f3;
 }
 
 .dropdown-header {

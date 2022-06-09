@@ -2,10 +2,12 @@
 
   namespace App\Http\Controllers;
 
-  use Illuminate\Http\Request;
-  use Validator;
-  use Auth;
-  use Session;
+    use Illuminate\Http\Request;
+    use Validator;
+    use Auth;
+    use Session;
+    use App\User;
+    use Illuminate\Support\Facades\Hash;
 
   class UserController extends Controller{
 
@@ -23,7 +25,7 @@
          if(('Locatore'==(Auth::user()->tipo)||'locatario'==(Auth::user()->tipo))){
             return redirect()->to('/homeutente');
          }
-         elseif('admin'==(Auth::user()->tipo)||'locatario'==(Auth::user()->tipo)){
+         elseif('admin'==(Auth::user()->tipo)){
              return redirect()->to('/homeadmin');
          }
 
@@ -31,7 +33,6 @@
          return back()->with('error', 'Username e/o password errati!');
        }
     }
-
 
     public function homeutente(){
       return view('homeutente');
