@@ -25,7 +25,6 @@ Route::get('/homeadmin', [UserController::class, 'homeadmin'])->name('homeadmin'
 
 #Pagine Generali
 Route::get('/about', 'HomeController@about')->name('about');
-Route::get('/catalogo', 'AnnuncioController@catalogo')->name('catalogo');
 Route::get('/why', 'HomeController@why')->name('why');
 
 #Autentication Route
@@ -36,6 +35,7 @@ Route::get('/signup', 'HomeController@signup')->name('signup');
 Route::get('/logout', 'LogoutController@logout')->name('logout');
 
 #Catalogo
+Route::get('/catalogo', 'AnnuncioController@catalogo')->name('catalogo');
 Route::get('/dettagli/{id}', 'AnnuncioController@dettagli')->name('dettagli');
 Route::post('filterCatalog', [AnnuncioController::class, 'filterCatalog'])->name('filterCatalog');
 
@@ -78,6 +78,3 @@ Route::get('/richieste', 'PrenotazioneController@richieste')->name('richieste');
 #Statistiche
 Route::get('/stats', 'StatsController@getStat')->name('stats');
 
-#Testroutes
-Route::get('/test', function(){return View::make('pages.home');});
-Route::get('/t1', function(){return View::make('pages.testchat');});

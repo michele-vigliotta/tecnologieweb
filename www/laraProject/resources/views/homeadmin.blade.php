@@ -120,11 +120,7 @@
   </section>
   <!-- end why us section -->
 
-  @include('contentSections/general/clientSection')
-
     @include('contentSections/general/infoSection')
-
-
     @include('includes/footer')
     @include('includes.jsScript')
 </div>
