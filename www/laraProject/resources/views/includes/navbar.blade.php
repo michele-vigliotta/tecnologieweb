@@ -3,7 +3,8 @@
         <span>Affitta casa</span>
     </a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class=""> </span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -13,9 +14,9 @@
             <!-- Route Catalogo -->
             @include('includes/navItem/onlyRoute',  ['route'=>'catalogo'], ['value'=>'Catalogo'])
             <!-- Route About -->
-            @include('includes/navItem/onlyRoute',  ['route'=>'about'], ['value'=>'About'])
+            @include('includes/navItem/onlyRoute',  ['route'=>'pages.general.about'], ['value'=>'pages.general.about'])
             <!-- Route Why -->
-            @include('includes/navItem/onlyRoute',  ['route'=>'why'], ['value'=>'Why Us'])
+            @include('includes/navItem/onlyRoute',  ['route'=>'pages.general.why'], ['value'=>'Why Us'])
             <!-- Route Faq -->
             @include('includes/navItem/onlyRoute',  ['route'=>'faq'], ['value'=>'FAQ'])
 
@@ -26,7 +27,7 @@
                     @include('includes/navItem/onlyRoute',  ['route'=>'chat'], ['value'=>'Chat'])
                 @endif
                 @if('admin'==(Auth::user()->tipo))
-                <!-- Route Statistiche -->
+                    <!-- Route Statistiche -->
                     @include('includes/navItem/onlyRoute',  ['route'=>'stats'], ['value'=>'Statistiche'])
                 @endif
                 <!-- Route Profilo -->
@@ -41,12 +42,12 @@
                     @if( Request::is('annunci'))
                         <li class="nav-item active">
                     @else
-                <li class="nav-item">
+                        <li class="nav-item">
+                            @endif
+                            <a class="nav-link" href="{{route('annunci')}}">Annunci</a>
+                        </li>
                     @endif
-                  <a class="nav-link" href="{{route('annunci')}}">Annunci</a>
-              </li>
-                    @endif
-            @endif
+                @endif
         </ul>
 
         <!-- Login/Register Route -->

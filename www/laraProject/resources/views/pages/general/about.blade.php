@@ -5,6 +5,6 @@
 @stop
 
 @section('content')
-    @include('contentSections/general/infoSection')
+    @include('contentSections.general.infoSection')
 @stop
 

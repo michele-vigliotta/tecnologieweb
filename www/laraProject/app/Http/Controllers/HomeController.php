@@ -13,15 +13,15 @@
     }
 
     public function index(){
-      return view('index');
+      return view('pages.home.index');
     }
 
     public function about(){
-      return view('about');
+      return view('pages.general.about');
     }
 
     public function why(){
-      return view('why');
+      return view('pages.general.why');
     }
 
     public function catalogo(){
@@ -35,11 +35,11 @@
     }
 
 	  public function login(){
-      return view('login');
+      return view('pages.autentication.login');
     }
 
     public function signup(){
-      return view('signup');
+      return view('pages.autentication.signup');
     }
 
     public function homeutente(){

@@ -35,10 +35,10 @@
     }
 
     public function homeutente(){
-      return view('homeutente');
+      return view('pages.home.homeutente');
     }
     public function homeadmin(){
-      return view('homeadmin');
+      return view('pages.home.homeadmin');
     }
     public function profile(){
       return view('profile');

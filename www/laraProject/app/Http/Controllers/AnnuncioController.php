@@ -106,7 +106,7 @@ class AnnuncioController extends Controller{
     }
 
     public function aggiungiAnnuncio(){
-      return view('addAnnuncio');
+      return view('pages.annunci.addAnnuncio');
     }
 
     public function filterCatalog(Request $request){

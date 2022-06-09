@@ -18,7 +18,7 @@ use App\Http\Controllers\PrenotazioneController;
 */
 
 #Home
-Route::get('/', function () {return view('index');});
+Route::get('/', function () {return view('pages.home.index');});
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/homeutente', [UserController::class, 'homeutente'])->name('homeutente')->middleware('auth');
 Route::get('/homeadmin', [UserController::class, 'homeadmin'])->name('homeadmin')->middleware('auth');
