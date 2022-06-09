@@ -14,9 +14,9 @@
             <!-- Route Catalogo -->
             @include('includes/navItem/onlyRoute',  ['route'=>'catalogo'], ['value'=>'Catalogo'])
             <!-- Route About -->
-            @include('includes/navItem/onlyRoute',  ['route'=>'pages.general.about'], ['value'=>'pages.general.about'])
+            @include('includes/navItem/onlyRoute',  ['route'=>'about'], ['value'=>'About'])
             <!-- Route Why -->
-            @include('includes/navItem/onlyRoute',  ['route'=>'pages.general.why'], ['value'=>'Why Us'])
+            @include('includes/navItem/onlyRoute',  ['route'=>'why'], ['value'=>'Why Us'])
             <!-- Route Faq -->
             @include('includes/navItem/onlyRoute',  ['route'=>'faq'], ['value'=>'FAQ'])
 
