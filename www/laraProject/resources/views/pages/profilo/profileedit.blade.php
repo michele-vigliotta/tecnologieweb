@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    @include('includes/head')
+    @include('includes.head')
 </head>
 
 <body class="sub_page">
@@ -11,7 +11,7 @@
     <!-- header section strats -->
     <header class="header_section">
         <div class="container-fluid">
-            @include('includes/navbar')
+            @include('includes.navbar')
         </div>
     </header>
     <!-- end header section -->
@@ -230,10 +230,10 @@
 
 <!-- footer -->
 
-@include('contentSections/general/infoSection')
+@include('contentSections.general.infoSection')
 
 
-@include('includes/footer')
+@include('includes.footer')
 @include('includes.jsScript')
 
 

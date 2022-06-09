@@ -41,11 +41,11 @@
       return view('pages.home.homeadmin');
     }
     public function profile(){
-      return view('profile');
+      return view('pages.profilo.profile');
     }
 
     public function profileedit(){
-      return view('profileedit');
+      return view('pages.profilo.profileedit');
     }
 
     public function update(Request $request){
