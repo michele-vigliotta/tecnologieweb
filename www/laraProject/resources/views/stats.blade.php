@@ -1,4 +1,4 @@
-@extends('tests.testDir.resources.views.layouts.default')
+@include('includes/head')
 @section('content')
 
 @stop
@@ -128,5 +128,5 @@
     </section>
 
 
-    @include('tests.testDir.resources.views.contentSections.general.infoSection')
+    @include('contentSections/general/infoSection')
 @stop

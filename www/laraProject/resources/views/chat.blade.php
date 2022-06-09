@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    @include('tests.testDir.resources.views.includes.head')
+    @include('includes/head')
 </head>
 <body class="sub_page">
 <div class="hero_area2">
     <!-- header section strats -->
     <header class="header_section">
         <div class="container-fluid">
-            @include('tests.testDir.resources.views.includes.navbar')
+            @include('includes/navbar')
         </div>
     </header>
     <!-- end header section -->
@@ -47,10 +47,11 @@
     </div>
 </section>
 
-@include('tests.testDir.resources.views.contentSections.general.infoSection')
+@include('contentSections/general/infoSection')
 
-@include('tests.testDir.resources.views.includes.footer')
-@include('tests.testDir.resources.views.includes.jsScript')
+
+@include('includes/footer')
+@include('includes.jsScript')
 
 </body>
 </html>

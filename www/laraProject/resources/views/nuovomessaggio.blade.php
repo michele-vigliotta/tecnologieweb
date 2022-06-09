@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    @include('tests.testDir.resources.views.includes.head')
+    @include('includes/head')
 
 </head>
 
@@ -12,7 +12,7 @@
     <!-- header section strats -->
     <header class="header_section">
         <div class="container-fluid">
-            @include('tests.testDir.resources.views.includes.navbar')
+            @include('includes/navbar')
         </div>
     </header>
     <!-- end header section -->
@@ -77,14 +77,14 @@
 
 <!-- find section ends -->
 
-@include('tests.testDir.resources.views.contentSections.general.infoSection')
-
+@include('contentSections/general/infoSection')
 
 <footer class="footer_section">
-    @include('tests.testDir.resources.views.includes.footer')
+    @include('includes/footer')
 </footer>
 
-@include('tests.testDir.resources.views.includes.jsScript')
+
+@include('includes.jsScript')
 
 
 </body>
