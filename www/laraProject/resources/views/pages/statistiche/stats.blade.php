@@ -1,4 +1,4 @@
-@include('includes/head')
+@include('includes.head')
 @section('content')
 
 @stop
@@ -128,5 +128,5 @@
     </section>
 
 
-    @include('contentSections/general/infoSection')
+    @include('contentSections.general.infoSection')
 @stop

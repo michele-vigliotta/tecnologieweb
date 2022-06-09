@@ -55,7 +55,7 @@ class StatsController extends Controller{
     $dlon=DB::select($location);
     $dlod=DB::select($located);
 
-    return view('stats', ['doff'=>$doff, 'dlon'=>$dlon,'dlod'=>$dlod] );
+    return view('pages.statistiche.stats', ['doff'=>$doff, 'dlon'=>$dlon,'dlod'=>$dlod] );
   }
 
 

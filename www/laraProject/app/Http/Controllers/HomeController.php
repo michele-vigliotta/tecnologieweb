@@ -86,7 +86,7 @@
           $query2="select * from utente";
           $utenti = DB::select($query2);
 
-          return view('chat', ['messaggi'=>$messaggi,'utenti'=>$utenti]);
+          return view('pages.chat.chat', ['messaggi'=>$messaggi,'utenti'=>$utenti]);
 
       }
 
