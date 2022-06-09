@@ -4,6 +4,6 @@
 
 
 @section('content')
-    @include('contentSections.catalogue.catalogue')
+    @include('contentSections/catalogue/catalogue')
     @include('contentSections/general/infoSection')
 @stop

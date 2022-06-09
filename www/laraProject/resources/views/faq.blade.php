@@ -18,25 +18,44 @@
 
   <section class="client_section layout_padding">
     <div class="container-fluid">
+        
+        @if(session('status'))
+        <div class=''>{{sesssion('status')}} </div>
+        @endif
+            
       <div class="heading_container psudo_white_primary mb_45">
         <h2>
           Frequently Asked Questions
         </h2>
+          @if(isset(Auth::user()->nome))
+                @if('admin'==(Auth::user()->tipo))
+          <div class="quote_btn-container">     
+          <a class="quote_btn" href="{{route('faqadd')}}">Aggiungi FAQ</a>
+          </div>
+                @endif
+          @endif
+          
+          
           @if(!empty($faq))
             @foreach ($faq as $xfaq)
               <div class="col-sm-62">
-                <h4 class="faq-question">{{$xfaq->id_FAQ}})&nbsp;{{ $xfaq->domanda }}</h4>
+                <h4 class="faq-question">{{ $xfaq->domanda }}</h4>
                 <p  class="faq-answer">{{ $xfaq->risposta }}</p>
                 @if(isset(Auth::user()->nome))
                     @if('admin'==(Auth::user()->tipo))
                     <center>
-                    <a href="{{route('faqedit',['id'=>$xfaq->id_FAQ])}}" style="font-size:16px;">Modifica FAQ</a>
+                        <div class="quote_btn-container">
+                            <a class="quote_btn" href="{{route('faqedit',['id'=>$xfaq->id_FAQ])}}" >Modifica FAQ</a>
+                             &nbsp;
+                            <a class="quote_btn" href="{{route('faqdelete',['id'=>$xfaq->id_FAQ])}}" >Elimina FAQ</a>
+                            
+                        </div>
                     </center>
+                    
+                     
                     @endif
                 @endif
-
               </div>
-
             @endforeach
           @else
             <div class="col-sm-6 col-md-4">
@@ -45,15 +64,6 @@
               </div>
             </div>
           @endif
-          <div class="col align-items-center">
-              <center>
-                  <a href="{{route('faqadd')}}" style="font-size:16px;">Aggiungi FAQ</a>
-              </center>
-
-          </div>
-
-
-
       </div>
     </div>
   </section>

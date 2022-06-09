@@ -2,19 +2,19 @@
 <html>
 
 <head>
-    @include('includes.head')
+  @include('includes.head')
+  @yield('optionalStyle')
 </head>
 
 <body class="sub_page">
 
   <div class="hero_area2">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="container-fluid">
-        @include('includes/navbar')
-      </div>
-    </header>
-    <!-- end header section -->
+      <header class="header_section">
+          <div class="container-fluid">
+              @include('includes.navbar')
+          </div>
+
+      </header>
   </div>
 
   <!-- find section starts -->
@@ -35,7 +35,7 @@
                             <div class="container ">
                               <div class="col-md-10">
                                 @if($annuncio[0]->mainImg!=null)
-                                  <img id="img" src="../immaginiAnnunci/{{ $annuncio[0]->mainImg }}" height="300px" width="450px">
+                                  <img id="img" src="{{asset('/immaginiAnnunci/'.$annuncio[0]->mainImg) }}" height="300px" width="450px">
                                 @else
                                   <img src="../images/no_img.jpg" height="300px" width="450px">
                                 @endif
@@ -45,10 +45,8 @@
                           @foreach($photo as $ph)
                           <div class="carousel-item">
                             <div class="container ">
-                              <div class="row">
-                                <div class="col-md-10">
-                                  <img src="../immaginiAnnunci/{{$ph->url}}" height="300px" width="450px">
-                                </div>
+                              <div class="col-md-10">
+                                <img src="{{asset('/immaginiAnnunci/'.$ph->url)}}" height="300px" width="450px">
                               </div>
                             </div>
                           </div>
@@ -86,25 +84,24 @@
                           <span class="span4">&dash; Numero di camere: {{$annuncio[0]->numero_camere}}</span><br>
                         @endif
                         <span class="span4">&dash; Posti letto totali: {{$annuncio[0]->posti_letto_totali}}</span><br>
-                        <span class="span4">&dash; Possibilità di locazione da: {{date('d-m-Y', strtotime($annuncio[0]->inizio_locazione))}} a {{date('d-m-Y', strtotime($annuncio[0]->fine_locazione))}}</span><br>
+                        <span class="span4">&dash; Possibilità di locazione da: {{date('d-m-Y', strtotime($annuncio[0]->inizio_locazione))}} a {{date('d-m-Y', strtotime($annuncio[0]->fine_locazione))}}</span><br><br>
                       </div>
                       <div class="prezzo">
                         <h4>Prezzo: <h2>{{$annuncio[0]->canone_affitto}}€</h2></h4><br>
                       </div>
                     <br>
-
                     <div class="servizi"> <!-- Servizi disponibli-->
                       <span class="span3">
                         SERVIZI DISPONIBILI
                       </span>
                       <div class="row">
-                        <img class="service-img" src="../images/icon/service/Cucina.png">
+                        &nbsp;&nbsp;<img class="service-img" src="{{asset('/images/icon/Service/Cucina.png')}}">
                         @if($annuncio[0]->cucina==1)
                           <span class="service">Cucina</span>
                         @else
                           <span class="service_no">Cucina</span>
                         @endif
-                        <img class="service-img" src="../images/icon/service/Locale ricreativo.png">
+                        &nbsp;&nbsp;<img class="service-img" src="{{asset('/images/icon/Service/Locale ricreativo.png')}}">
                         @if($annuncio[0]->locale_ricreativo==1)
                           <span class="service">Locale ricereativo</span>
                         @else
@@ -113,7 +110,7 @@
                         </div>
                         <div class="row">
                         @foreach(json_decode($annuncio[0]->servizi_offerti) as $service=>$value)
-                          <img class="service-img" src="../images/icon/service/{{$service}}.png">
+                          &nbsp;&nbsp;<img class="service-img" src="{{asset('/images/icon/Service/'.$service.'.png')}}">
                           @if($value!=null)
                             <span class="service">{{$service}}</span>
                           @else
@@ -127,15 +124,30 @@
                       </div>
                     </div>
                     <br>
-                    <div class="contatta">
-                      <div class="detail-box">
-                        <div class="btn-box">
-                          <a href="{{ route('chat',['id_locatore'=>$annuncio[0]->id_locatore, 'id_locatario'=>Auth::user()->id]) }}">
-                            <h4>Contatta il locatore</h4>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
+                    @if('locatario'==(Auth::user()->tipo))
+                    <center>
+                          <div class="quote_btn-container">
+                            @if(empty($controllo))
+                                  <a class="quote_btn" onclick="return confirm('Sicuro di voler prenotare questa locazione?')" href="{{ route('prenota',['id_locatore'=>$annuncio[0]->id_locatore, 'id_locatario'=>Auth::user()->id, 'id_annuncio'=>$annuncio[0]->id_annuncio]) }}">
+                                    Prenota locazione
+                                  </a>
+                            &nbsp;
+                            @else
+                                  <a class="quote_btn" style="pointer-events: none; cursor: default;">
+                                    Prenota locazione
+                                  </a>
+                            &nbsp;
+                            @endif
+                              <a class="quote_btn" href="{{ route('chat',['id_locatore'=>$annuncio[0]->id_locatore, 'id_locatario'=>Auth::user()->id]) }}">
+                                Contatta il locatore
+                              </a>
+                          </div>
+                    @elseif('Locatore'==(Auth::user()->tipo))
+                         <a class="quote_btn" href="{{ route('richieste', ['id_annuncio'=>$annuncio[0]->id_annuncio]) }}">
+                                Visualizza richieste ricevute
+                              </a>
+                    @endif
+                   </center>
                   </div>
                 </div>
               </div>
