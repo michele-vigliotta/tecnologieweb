@@ -4,7 +4,7 @@
     @include('includes.head')
     @yield('optionalStyle')
 </head>
-<body>
+<body class="sub_page">
 <div class="hero_area2">
     <header class="header_section">
         <div class="container-fluid">
