@@ -14,5 +14,7 @@
 <script src="{{ URL('js/custom.js') }}"></script>
 <script src="{{ URL('js/bootstrap-multiselect.min.js') }}"></script>
 <script src="{{ URL('js/bootstrap-multiselect.js') }}"></script>
-<script src="{{ URL('js/filter.js') }}"></script>
+@if(Request::is('catalogo')||Request::is('filterCatalog'))
+    <script src="{{ URL('js/filter.js') }}"></script>
+@endif
 <script src="{{ URL('js/chat.js') }}"></script>
