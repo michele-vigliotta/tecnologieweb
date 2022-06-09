@@ -2,12 +2,12 @@
 
   namespace App\Http\Controllers;
 
-    use Illuminate\Http\Request;
-    use Validator;
-    use Auth;
-    use Session;
-    use App\User;
-    use Illuminate\Support\Facades\Hash;
+  use Illuminate\Http\Request;
+  use Validator;
+  use Auth;
+  use Session;
+  use App\User;
+  use Illuminate\Support\Facades\Hash;
 
   class UserController extends Controller{
 
@@ -22,7 +22,7 @@
        );
 
        if(Auth::attempt($user_data, $remember=true)){
-         if(('Locatore'==(Auth::user()->tipo)||'locatario'==(Auth::user()->tipo))){
+         if(('locatore'==(Auth::user()->tipo)||'locatario'==(Auth::user()->tipo))){
             return redirect()->to('/homeutente');
          }
          elseif('admin'==(Auth::user()->tipo)){
@@ -48,15 +48,14 @@
       return view('profileedit');
     }
 
-    public function update(Request $request)
-    {
+    public function update(Request $request){
         $this->validate($request, [
-        'password_attuale'   => 'required|alphaNum|min:3',
-        'nuovo_numero'       => 'min:10|max:10',
-        'nuovo_prefisso'     => 'min:2|max:3',
-        'nuovo_c_fiscale'    => 'min:16|max:16',
-      ]);
-        $user = User::find(auth()->user()->id);
+          'password_attuale'   => 'required|alphaNum|min:3',
+          'nuovo_numero'       => 'min:10|max:10',
+          'nuovo_prefisso'     => 'min:2|max:3',
+          'nuovo_c_fiscale'    => 'min:16|max:16',
+        ]);
+        $user = User::find(Auth::user()->id);
         if(Hash::check($request->password_attuale, $user->password)){
             Auth::user()->nome = request('nuovo_nome');
             Auth::user()->cognome = request('nuovo_cognome');
