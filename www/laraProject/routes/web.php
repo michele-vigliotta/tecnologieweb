@@ -52,7 +52,7 @@ Route::get('/dettagli/{id}', 'AnnuncioController@dettagli')->name('dettagli');
 Route::post('filterCatalog', [AnnuncioController::class, 'filterCatalog'])->name('filterCatalog');
 
 Route::get('/annunci', 'HomeController@annunci')->name('annunci');
-Route::get('/stats', 'HomeController@stats')->name('stats');
+Route::get('/stats', 'StatsController@getStat')->name('stats');
 Route::get('/chat', 'HomeController@chat')->name('chat');
 
 Route::get('/profileedit', [UserController::class, 'profileedit'])->name('profileedit')->middleware('auth');

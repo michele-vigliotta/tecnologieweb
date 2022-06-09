@@ -78,11 +78,11 @@
                                                                 </div>
                                                                 <div class="col-7" style="border-left: thick solid #FA4953;">
                                                                     <p style="text-align: left;">
-                                                                        Alloggi locati: ... </p>
+                                                                        Alloggi locati: {{$dlod[0] -> CountPren }} </p>
                                                                     <p style="text-align: left;">
-                                                                        Offerte di alloggio nel sito: ... </p>
+                                                                        Offerte di alloggio nel sito: {{$doff[0] -> countAnn}} </p>
                                                                     <p style="text-align: left;">
-                                                                        Offerte di locazione effettuate: ... </p>
+                                                                        Offerte di locazione effettuate: {{$dlon[0] -> countPren}} </p>
                                                                 </div>
                                                             </div>
 
