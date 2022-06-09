@@ -101,7 +101,7 @@
 
 <!-- find section ends -->
 
-@include('contentSections.general.infoSection')
+@include('contentSections.home.infoSection')
 
 
 @include('includes.footer')

@@ -6,9 +6,9 @@
 
 
 @section('content2')
-    @include('contentSections.general.about')
-    @include('contentSections.general.saleSection')
-    @include('contentSections.general.whyUs')
+    @include('contentSections.home.about')
+    @include('contentSections.home.saleSection')
+    @include('contentSections.home.whyUs')
 
 @stop
 

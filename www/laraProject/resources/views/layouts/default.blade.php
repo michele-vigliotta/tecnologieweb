@@ -15,20 +15,18 @@
 </div>
 
 
-
 @yield('content1')
 
 <div id="main">
     @yield('content2')
 
 
-    @include('contentSections.general.infoSection')
+    @include('contentSections.home.infoSection')
     <footer class="footer_section">
         @include('includes.footer')
     </footer>
 
     @include('includes.jsScript')
-
 
 
 </div>

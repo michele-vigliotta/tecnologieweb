@@ -101,7 +101,7 @@
                     }
                 }
 
-                //Switched from arrayChange subscription to general subscription using 'refresh'.
+                //Switched from arrayChange subscription to home subscription using 'refresh'.
                 //Not sure performance is any better using 'select' and 'deselect'.
                 if (allBindings.has('selectedOptions')) {
                     var selectedOptions = allBindings.get('selectedOptions');

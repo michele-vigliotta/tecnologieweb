@@ -17,11 +17,11 @@
     }
 
     public function about(){
-      return view('pages.general.about');
+      return view('pages.home.about');
     }
 
     public function why(){
-      return view('pages.general.why');
+      return view('pages.home.why');
     }
 
     public function catalogo(){

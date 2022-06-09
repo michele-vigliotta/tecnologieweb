@@ -1,9 +1,6 @@
-@include('includes.head')
-@section('content')
+@extends('layouts.default')
 
-@stop
-
-@section('carousel')
+@section('content1')
     <section class="find_section layout_padding">
         <div class="container">
             <div class="row">
@@ -35,19 +32,7 @@
                                                                     Data di Fine
                                                                     <input type="date" id="endDate" name="endDate"
                                                                            disabled>
-                                                                    <script>
-                                                                        const dateCheck = document.getElementById('dateCheck')
-                                                                        dateCheck.addEventListener('change', (event) => {
-                                                                            if (event.currentTarget.checked) {
-                                                                                document.getElementById("startDate").disabled = false;
-                                                                                document.getElementById("endDate").disabled = false;
-                                                                            } else {
-                                                                                document.getElementById("startDate").disabled = true;
-                                                                                document.getElementById("endDate").disabled = true;
-                                                                            }
-                                                                        })
 
-                                                                    </script>
                                                                     <br>
                                                                     <input type="checkbox" name="locationCheck"
                                                                            id="locationType">
@@ -60,16 +45,7 @@
                                                                         </option>
                                                                         <option value="camera">Camera Singola</option>
                                                                     </select>
-                                                                    <script>
-                                                                        const locCheck = document.getElementById('locationType')
-                                                                        locCheck.addEventListener('change', (event) => {
-                                                                            if (event.currentTarget.checked) {
-                                                                                document.getElementById("loca").disabled = false;
-                                                                            } else {
-                                                                                document.getElementById("loca").disabled = true;
-                                                                            }
-                                                                        })
-                                                                    </script>
+
                                                                     <br><br>
                                                                     <div
                                                                         class="contatta quote_btn-container justify-content-center">
@@ -104,8 +80,8 @@
                             </div>
                         </div>
                     </div>
+                    @include('includes.script.stats')
     </section>
 
-
-    @include('contentSections.general.infoSection')
 @stop
+
