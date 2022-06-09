@@ -18,7 +18,7 @@
 
 <div id="main">
     @yield('content')
-
+    @include('contentSections.general.infoSection')
     <footer class="footer_section">
         @include('includes.footer')
     </footer>
