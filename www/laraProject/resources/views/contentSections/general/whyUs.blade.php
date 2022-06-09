@@ -54,7 +54,7 @@
                 </div>
             </div>
         </div>
-        @if( Request::is('/')||Request::is('test2'))
+        @if( Request::is('/') ||Request::is('homeutente')||Request::is('homeadmin'))
         <div class="btn-box">
             <a href="{{ route('why') }}">
                 Read More
@@ -62,7 +62,7 @@
         </div>
         @endif
         <div class="btn-box">
-            @if(!isset(Auth::user()->nome) && !Request::is('test2') && !Request::is('/'))
+            @if(!isset(Auth::user()->nome) && !Request::is('/'))
                 <a href="{{ route('signup') }}">
                     Registrati ora
                 </a>

@@ -112,11 +112,11 @@
                         @foreach(json_decode($annuncio[0]->servizi_offerti) as $service=>$value)
                           &nbsp;&nbsp;<img class="service-img" src="{{asset('/images/icon/Service/'.$service.'.png')}}">
                           @if($value!=null)
-                            <span class="service">{{$service}}</span>
+                            <span class="service">{{preg_replace('/_/', ' ', $service)}}</span>
                           @else
-                            <span class="service_no">{{$service}}</span>
+                            <span class="service_no">{{preg_replace('/_/', ' ', $service)}}</span>
                           @endif
-                          @if($service=='Linea telefonica'||$service=='Televisione'||$service=='Fumatori ammessi'||$service=='Lavatrice')
+                          @if($service=='Linea_telefonica'||$service=='Televisione'||$service=='Fumatori_ammessi'||$service=='Lavatrice')
                             </div>
                             <div class="row">
                           @endif

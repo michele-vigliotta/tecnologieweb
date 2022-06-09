@@ -38,7 +38,7 @@
                   <form method="post" action="{{url('annuncioupdate', [$annuncio[0]->id_annuncio])}}">
                     {{method_field('PUT')}}
                     {{csrf_field()}}
-                    
+
                     <center> <!-- Descrizione -->
                       <div class="col-md-6sd px-0">
                         <div class="form-group ">
@@ -140,7 +140,7 @@
                                 @if($lista_servizi->Linea_telefonica == 'si')
                                   <input type="checkbox" name="nuovo_Linea_telefonica" class="checkbox-control" checked value="si"/> Linea telefonica
                                 @else
-                                  <input type="checkbox" name="nuovo_Linea_telefonica" class="checkbox-control" value="si"/> Linea telefonica                              
+                                  <input type="checkbox" name="nuovo_Linea_telefonica" class="checkbox-control" value="si"/> Linea telefonica
                                 @endif
                             </div>
                           </div>
