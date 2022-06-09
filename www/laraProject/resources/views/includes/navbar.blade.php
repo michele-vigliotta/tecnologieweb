@@ -36,6 +36,16 @@
                     <!-- Route Annunci -->
                     @include('includes/navItem/onlyRoute',  ['route'=>'annunci'], ['value'=>'Annunci'])
                 @endif
+
+                @if('Locatore'==(Auth::user()->tipo))
+                    @if( Request::is('annunci'))
+                        <li class="nav-item active">
+                    @else
+                <li class="nav-item">
+                    @endif
+                  <a class="nav-link" href="{{route('annunci')}}">Annunci</a>
+              </li>
+                    @endif
             @endif
         </ul>
 
@@ -54,16 +64,3 @@
         @endif
     </div>
 </nav>
-
-{{--
-Zona Login/Register Route
-Da inserire se si vuole la visualizzazione del profilo
-
-@include('includes/navItem/rightSection',  ['route'=>'profile'],['value'=>Auth::user()->nome])
-Da inserire se si vuole andare sulla home
-@if('admin'!==(Auth::user()->tipo))
-    @include('includes/navItem/rightSection',  ['route'=>'homeutente'],['value'=>Auth::user()->nome])
-@else
-    @include('includes/navItem/rightSection',  ['route'=>'homeadmin'],['value'=>Auth::user()->nome])
-@endif
---}}
