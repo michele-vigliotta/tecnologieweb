@@ -1,7 +1,7 @@
 <section class="chatList">
     {{--Prova stile 1 nome chat--}}
     <div class="row justify-content-between">
-        <div class="col-5">
+        <div class="col-6">
             <h4> Name</h4>
             <a>Last message exampleafdohwieufnldsjkcnlifuhasli</a>
         </div>
