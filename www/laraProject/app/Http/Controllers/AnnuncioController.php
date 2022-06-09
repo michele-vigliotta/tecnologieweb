@@ -369,7 +369,7 @@ class AnnuncioController extends Controller{
         $annuncio=DB::select($query);
         $lista_servizi=json_decode($annuncio[0]->servizi_offerti);
         //echo '<pre>'; print_r($lista_servizi->Televisione); echo '</pre>';
-        return view('annuncioedit', ['annuncio'=>$annuncio, 'lista_servizi'=>$lista_servizi]);
+        return view('pages.annunci.annuncioedit', ['annuncio'=>$annuncio, 'lista_servizi'=>$lista_servizi]);
     }
 
     public function annuncioupdate(Request $request){

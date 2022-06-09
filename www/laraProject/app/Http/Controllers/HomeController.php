@@ -61,7 +61,7 @@
       public function annunci(){
           $query="select * from annuncio where id_locatore='".Auth::user()->id."'";
           $annunci=DB::select($query);
-          return view('annunci', ['annunci'=>$annunci]);
+          return view('pages.annunci.annunci', ['annunci'=>$annunci]);
       }
       public function stats(){
           return view('stats');
