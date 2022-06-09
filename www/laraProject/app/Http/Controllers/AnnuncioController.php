@@ -342,12 +342,12 @@ class AnnuncioController extends Controller{
         }
 
         $annunci=DB::select($query);
-        return view('catalogo', ['annunci'=>$annunci]);
+        return view('pages.catalogo.catalogo', ['annunci'=>$annunci]);
     }
 
     public function catalogo(){
       $annunci=DB::select('select * from annuncio');
-      return view('catalogo', ['annunci'=>$annunci]);
+      return view('pages.catalogo.catalogo', ['annunci'=>$annunci]);
     }
 
     public function dettagli(Request $request){
@@ -361,7 +361,7 @@ class AnnuncioController extends Controller{
 
         $query3 = "select * from prenotazione where id_annuncio='".$request->id."' and id_locatario='".Auth::user()->id."'" ;
         $controllo= DB::select($query3);
-        return view('dettagli', ['annuncio'=>$annuncio, 'photo'=>$photo, 'controllo'=>$controllo]);
+        return view('pages.catalogo.dettagli', ['annuncio'=>$annuncio, 'photo'=>$photo, 'controllo'=>$controllo]);
     }
 
     public function annuncioedit(Request $request){
